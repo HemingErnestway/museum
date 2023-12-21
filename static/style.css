@@ -1,0 +1,387 @@
+/*div {*/
+/*    border: black solid 1px;*/
+/*}*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: DINPro, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('head.jpg'); /* Замените 'head.jpg' на путь к вашей фотографии */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 120px 100px;
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+header .welcome-text {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+    padding-bottom: 50px;
+    font-size: 36pt;
+    font-weight: bold;
+}
+
+header h1 {
+    width: 50%;
+}
+
+header p {
+    width: 50%;
+    padding-bottom: 50px;
+}
+
+p {
+    font-size: 18pt;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.navbar {
+    border-bottom: solid 1px rgb(207, 211, 217);
+    background-color: #fff;
+    font-size: 15pt;
+}
+
+.navbar .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1280px;
+}
+
+.navbar .wrapper a {
+    text-transform: uppercase;
+}
+
+.navbar .wrapper ul {
+}
+
+
+
+
+.wrapper {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    /*box-shadow: 0 1.5rem 1.875rem rgba(0, 0, 0, 0.1);*/
+}
+
+/*.container {*/
+/*    margin: 120px 100px;*/
+/*    padding: 0;*/
+/*}*/
+
+/*.container h1 {*/
+/*    padding-bottom: 50px;*/
+/*    font-size: 36pt;*/
+/*    font-weight: bold;*/
+/*    width: 50%;*/
+/*}*/
+
+
+
+.about-section {
+    padding: 120px 100px;
+    background-color: #eff3f4;
+}
+
+.about-section .row {
+    margin: 0;
+    padding: 0;
+}
+
+.about-section .row .col-md-4 {
+    margin: 0;
+    padding: 0;
+}
+
+.about-section .row .col-md-8 {
+    padding-left: 70px;
+}
+
+
+
+.news-section {
+    padding: 120px 100px;
+    background-color: #fff;
+}
+
+.news-section .row {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news-section .row .col-md-4 {
+    margin: 0;
+    padding-right: 70px;
+    padding-left: 0;
+}
+
+.news-section .row .col-md-4 img {
+    padding-bottom: 20px;
+}
+
+.news-section .row .col-md-4 h3 {
+    font-size: 18pt;
+}
+
+.news-section .row .col-md-4 p {
+    color: #7c7c7c;
+}
+
+
+
+.contacts-section {
+    padding: 120px 100px;
+    background-color: #eff3f4;
+}
+
+.contacts-section .row {
+    margin: 0;
+    padding: 0;
+}
+
+.contacts-section .row .col-md-8 {
+    margin: 0;
+    padding: 0 0 0 70px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contacts-section .row .col-md-4 {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.veterans-section {
+    padding: 120px 100px;
+    background-color: #eff3f4;
+}
+
+
+
+.awards-section {
+    padding: 120px 100px;
+    background-color: #fff;
+}
+
+
+
+.cta {
+    background-image: url('head.jpg'); /* Замените 'head.jpg' на путь к вашей фотографии */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 120px 100px;
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.cta p {
+    width: 50%;
+    padding-bottom: 50px;
+}
+
+
+
+.articles-section {
+    padding: 100px 120px 50px;
+    background-color: #eff3f4;
+}
+
+.articles-section .row {
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.articles-section .row .col-md-4 {
+    margin: 0;
+    padding: 0;
+}
+
+.articles-section .row .col-md-8 {
+    padding-left: 70px;
+}
+
+.articles-section .row .col-md-8 .datetime {
+    color: #7c7c7c;
+}
+
+
+
+footer {
+    padding: 20px 100px;
+    background-color: #fff;
+    height: 100px;
+    align-content: center;
+}
+
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+footer p {
+    margin-bottom: 0;
+    font-size: 15pt;
+}
+
+
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение пространства между элементами */
+}
+
+.visit-button, .exhibits-button, .news-button, .to-exhibits-button, .to-news-button {
+    display: inline-block;
+    padding: 20px 20px;
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18pt;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.visit-button {
+    background-color: #0038a4; /* Синий цвет для кнопки "Посетить" */
+}
+
+.exhibits-button {
+    background-color: #eff3f4; /* Белый цвет для кнопки "Об экспонатах" */
+    color: #000;
+}
+
+.news-button {
+    background-color: #4CAF50; /* Зеленый цвет для кнопки "Новости" */
+}
+
+.to-exhibits-button, .to-news-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #eff3f4;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: transparent; /* Прозрачный фон для кнопки "Ко всем новостям" */
+}
+
+.exhibits-button:hover, .news-button:hover, .to-exhibits-button:hover, .to-news-button:hover {
+    background-color: #fff; /* Темно-синий цвет при наведении */
+    text-decoration: none;
+    color: #000;
+    box-shadow: 0 1.5rem 1.875rem rgba(0, 0, 0, 0.2);
+
+}
+
+.visit-button:hover {
+    background-color: #0055ff; /* Темно-синий цвет при наведении */
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 1.5rem 1.875rem rgba(0, 0, 0, 0.2);
+}
+
+.info-container {
+    padding: 20px;
+    text-align: left; /* Выравнивание текста по левому краю */
+    display: flex; /* Размещение элементов внутри контейнера в виде горизонтального ряда */
+    align-items: center; /* Выравнивание элементов по вертикали по центру */
+}
+
+.info-image {
+    margin-right: 20px; /* Отступ справа */
+    width: fit-content;
+}
+
+.info-text {
+    flex-grow: 1; /* Растягиваем блок с текстом на всю доступную ширину */
+}
+
+nav {
+    background-color: #eee;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.news-container {
+    padding: 20px;
+    margin-top: 20px; /* Отступ сверху для разделения блоков */
+}
+
+.news-item {
+    margin-bottom: 20px;
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.news-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.to-news-container {
+    text-align: right; /* Выравнивание текста по правому краю */
+}
+
+.to-news-button {
+    background-color: transparent; /* Прозрачный фон для кнопки "Ко всем новостям" */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.how-to-reach-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.how-to-reach-text {
+    flex-grow: 1;
+}
+
+.map-image {
+    width: 60%;
+    max-width: 400px;
+    border-radius: 5px;
+}
