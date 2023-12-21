@@ -3,22 +3,6 @@ server:
   timeout: ${SERVER.TIMEOUT:10}
 
 api:
-  ExhibitCreate:
-    method: POST
-    url: exhibit
-  ExhibitRead:
-    method: GET
-    url: exhibit/{id}
-  ExhibitsRead:
-    method: GET
-    url: exhibit
-  ExhibitUpdate:
-    method: PUT
-    url: exhibit/{id}
-  ExhibitDelete:
-    method: DELETE
-    url: exhibit/{id}
-
   NewsCreate:
     method: POST
     url: news

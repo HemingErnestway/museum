@@ -3,6 +3,7 @@ package api
 import (
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"museum/engine"
 	"museum/entity"
 	"museum/storage"
@@ -26,7 +27,25 @@ func (h *Handler) NewsReadSingle(ctx *engine.Context) {
 }
 
 func (h *Handler) NewsRead(ctx *engine.Context) {
-	ctx.Print(storage.NewsRead())
+	//news := NewsContent{
+	//	News: storage.NewsRead(),
+	//}
+
+	news := storage.NewsRead()
+
+	ctx.Response.Header().Set("Content-Type", "text/html")
+	//dataMarshal, _ := json.Marshal(news.News)
+
+	t := template.Must(template.New("templ").Parse(templ))
+	//var m []map[string]interface{}
+	//
+	//if err := json.Unmarshal([]byte(dataMarshal), &m); err != nil {
+	//	panic(err)
+	//}
+
+	if err := t.Execute(ctx.Response, news); err != nil {
+		panic(err)
+	}
 }
 
 func (h *Handler) NewsUpdate(ctx *engine.Context) {
@@ -45,3 +64,22 @@ func (h *Handler) NewsDelete(ctx *engine.Context) {
 	id := GetIdFromContext(ctx)
 	ctx.Print(storage.NewsDelete(id))
 }
+
+type NewsContent struct {
+	News []entity.News
+}
+
+const templ = `
+{{ range . }}
+<div class="row">
+    <div class="col-md-4">
+        <img src="{{ .ImgPath }}" alt="" class="info-image img-fluid">
+    </div>
+    <div class="col-md-8">
+        <h3>{{ .Header }}</h3>
+        <p class="datetime">{{ .DateTime }}</p>
+        <p>{{ .Content }}</p>
+    </div>
+</div>
+{{ end }}
+`

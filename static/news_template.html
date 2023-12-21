@@ -1,0 +1,12 @@
+{{ range .newsList }}
+<div class="row">
+    <div class="col-md-4">
+        <img src="{{ .ImgPath }}" alt="" class="info-image img-fluid">
+    </div>
+    <div class="col-md-8">
+        <h3>{{ .Header }}</h3>
+        <p class="datetime">{{ .DateTime }}</p>
+        <p>{{ .Content }}</p>
+    </div>
+</div>
+{{ end }}

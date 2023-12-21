@@ -28,6 +28,8 @@ func init() {
 	types[".html"] = true
 	types[".js"] = true
 	types[".svg"] = true
+	types[".css"] = true
+	types[".jpg"] = true
 
 	hdl = &api.Handler{}
 	services := reflect.ValueOf(hdl)
@@ -59,15 +61,14 @@ func mainHandle(w http.ResponseWriter, r *http.Request) {
 	pathName := pathArr[0]
 
 	if pathArr[0] == "" {
-		sendFile("index.html", ctx)
+		sendFile("./static/index.html", ctx)
 		return
 	}
 
-	//last := pathArr[(len(pathArr) - 1)]
-	//str := last[strings.LastIndex(last, "."):]
-	//if len(last) > 3 && types[str] {
-	//	sendFile("tpl/index.html", ctx)
-	//}
+	if staticUrl, ok := static(path); ok {
+		sendFile("./static/"+staticUrl, ctx)
+		return
+	}
 
 	maps, ok := apiMap[r.Method]
 	if !ok {
@@ -86,6 +87,17 @@ func mainHandle(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func sendFile(url string, ctx engine.Context) {
-	ctx.Response.Write([]byte{})
+func static(path string) (string, bool) {
+	splitPath := strings.Split(path, "/")
+	fileName := splitPath[len(splitPath)-1]
+	splitName := strings.Split(fileName, ".")
+	fileExt := "." + splitName[len(splitName)-1]
+	if types[fileExt] {
+		return path, true
+	}
+	return "", false
+}
+
+func sendFile(path string, ctx engine.Context) {
+	http.ServeFile(ctx.Response, ctx.Request, path)
 }

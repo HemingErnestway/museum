@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-image: url('head.jpg'); /* Замените 'head.jpg' на путь к вашей фотографии */
+    background-image: url('img/head.jpg'); /* Замените 'head.jpg' на путь к вашей фотографии */
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -185,7 +185,7 @@ h1 {
 
 
 .cta {
-    background-image: url('head.jpg'); /* Замените 'head.jpg' на путь к вашей фотографии */
+    background-image: url('img/head.jpg'); /* Замените 'head.jpg' на путь к вашей фотографии */
     background-size: cover;
     background-position: center;
     color: #fff;

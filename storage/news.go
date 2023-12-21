@@ -3,6 +3,7 @@ package storage
 import (
 	"museum/entity"
 	"sync"
+	"time"
 )
 
 type NewsMx struct {
@@ -25,6 +26,7 @@ func NewsCreate(news entity.News) *entity.News {
 
 	newsMx.iter++
 	news.Uuid = newsMx.iter
+	news.DateTime = time.Now().Format("2006-01-02 15:04")
 	newsMx.newsMap[newsMx.iter] = news
 
 	return &news
@@ -78,4 +80,16 @@ func NewsDelete(id uint32) string {
 	delete(newsMx.newsMap, id)
 
 	return "successfully deleted"
+}
+
+func NewsSlice() []entity.News {
+	newsMx.mtx.RLock()
+	defer newsMx.mtx.RUnlock()
+
+	v := make([]entity.News, len(newsMx.newsMap))
+	for _, val := range newsMx.newsMap {
+		v = append(v, val)
+	}
+
+	return v
 }

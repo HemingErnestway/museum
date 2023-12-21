@@ -11,7 +11,7 @@ func main() {
 	m.Handle("/", http.HandlerFunc(mainHandle))
 
 	server := &http.Server{
-		Addr:         ":8090",
+		Addr:         ":8080",
 		Handler:      m,
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
